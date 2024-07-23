@@ -1,9 +1,11 @@
+import math
+
 def solution(progresses, speeds):
     answer = []
     days = []
     
     for i in range(len(progresses)):
-        days.append((100 - progresses[i] + speeds[i] - 1) // speeds[i])
+        days.append(math.ceil((100 - progresses[i]) / speeds[i]))
     
     count = 1
     max_day = days[0]
